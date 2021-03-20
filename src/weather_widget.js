@@ -213,13 +213,12 @@ function weatherWidget() {
     const getGeolocation  = () => {
         const success = (pos) => {
             let result = `${pos.coords.latitude},${pos.coords.longitude}`;
-            console.log(result);
             return result;
         }
         const fail = (err) => {
             alert (err.message);
         }
-        navigator.geolocation.getCurrentPosition(success, fail);
+        return navigator.geolocation.getCurrentPosition(success, fail);
     };
     
     document.querySelector('.weather_get_forecast').addEventListener('click', () => {
@@ -231,16 +230,10 @@ function weatherWidget() {
         getForecast(city);
     });
     
-    let city = '',
+    let city = getGeolocation(),
         request = '',
         search_output = document.querySelector('.weather_search_output'),
         search_input = document.querySelector('.weather_search');
-    city = getGeolocation();
-    /*if (geolocation = 'undefined') {
-        city = 'Riga'
-    } else {
-        city = geolocation;
-    }*/
     getWeather(city);
     autocompleteSearch();
 }
