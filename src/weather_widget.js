@@ -230,7 +230,7 @@ function weatherWidget() {
         getForecast(city);
     });
     
-    let city = getGeolocation(),
+    let city = 'Riga',
         request = '',
         search_output = document.querySelector('.weather_search_output'),
         search_input = document.querySelector('.weather_search');
