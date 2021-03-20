@@ -236,12 +236,12 @@ function weatherWidget() {
         request = '',
         search_output = document.querySelector('.weather_search_output'),
         search_input = document.querySelector('.weather_search');
-    let geolocation = getGeolocation();
-    if (geolocation = 'undefined') {
+    let city = getGeolocation();
+    /*if (geolocation = 'undefined') {
         city = 'Riga'
     } else {
         city = geolocation;
-    }
+    }*/
     getWeather(city);
     autocompleteSearch();
 }
