@@ -120,7 +120,6 @@ function weatherWidget() {
                 search_output.innerHTML = '';
                 }
             } else if (e.key != 'Alt' && e.key != 'Control' && e.key != 'Shift' && e.key != 'Tab' && e.key != 'CapsLock' && e.key != 'Enter' && e.key != 'Backspace') {
-                console.log(e.key)
                 request += e.key;
                 if (request !== '') {
                     citySearch(request);
