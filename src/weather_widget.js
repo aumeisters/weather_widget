@@ -155,8 +155,8 @@ function weatherWidget() {
                         search_input.value = '';
                         request = '';
                         changeCity(search_city);
+                        getWeather(city);
                         if (document.querySelector('.weather_forecast.weather_forecast_transition')){
-                            getWeather(city);
                             getForecast(city);
                         }
                     })
