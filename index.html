@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Widget</title>
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="./src/weather_widget.js" defer></script>
+</head>
+<body>
+    <div class="weather_widget">
+        <div class="weather_current">
+            <div class="weather_current_output"></div>
+            <div class="weather_options">
+                <button class="weather_get_forecast">3 days</button>
+                <input title="Note: Works better with latin letters" type="text" class="weather_search" placeholder="Different city">
+                <div class="weather_search_output"></div>
+            </div>
+        </div>
+        <div class="weather_forecast">
+            <div class="weather_forecast_day"></div>
+            <div class="weather_forecast_day"></div>
+            <div class="weather_forecast_day"></div>
+        </div>
+    </div>
+</body>
+</html>

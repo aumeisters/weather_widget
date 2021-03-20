@@ -1,0 +1,185 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.weather_widget {
+    margin: 50px auto;
+    width: max-content;
+    display: flex;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(166deg, rgba(244,251,255,1) 0%, rgba(160,212,226,1) 50%, rgba(90,150,166,1) 100%);
+}
+.weather_current {
+    justify-content: space-evenly;
+}
+.weather_options {
+    height: 20%;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    padding-top: 3px;
+}
+.weather_current .weather_current_output {
+    height: 80%;
+}
+.weather_current .weather_search_output {
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+.weather_current, .weather_forecast_day {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 10px;
+    height: inherit;
+}
+.weather_current {
+    width: 200px;
+}
+.weather_forecast {
+    width: 0px;
+    transition: width 1s ease;
+    display: flex;
+}
+.weather_forecast.weather_forecast_transition {
+    width: 600px;
+}
+.weather_data {
+    display: flex;
+    flex-flow: column;
+}
+.weather_data_row {
+    flex: 100%;
+    height: fit-content;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.weather_current span {
+    display: inline-block;
+    height: min-content
+}
+.weather_current .city_name,.weather_current .temp {
+    font-size: 2em;
+} 
+.weather_data_row:nth-child(3) {
+    position: relative;
+}
+.weather_widget .weather_data_row:nth-child(2) span  {
+    height: 75px;
+}
+.weather_widget .temp {
+    background-image: url(./img/thermometer.svg);
+    background-size: 20px;
+    padding-left: 20px;
+    position: absolute;
+    right: -10%;
+    top: 0;
+    height: 30%;
+    background-size: contain;
+}
+.weather_widget .main_font {
+    font-size: 1.5em;
+}
+.weather_current .humidity,.weather_current .windspeed,.weather_widget .forecast_condition {
+    font-size: 1.3em;
+}
+.weather_widget .widget_pointer  {
+    cursor: pointer;
+}
+.weather_widget .humidity,.weather_widget .windspeed,.weather_widget .temp {
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+.weather_widget .humidity {
+    background-image: url(./img/drop.svg);
+    background-size: 25%;
+    padding-left: 15px;
+}
+.weather_widget .windspeed {
+    background-image: url(./img/wind.svg);
+    background-size: 20%;
+    padding-left: 25px;
+}
+.weather_widget .weather_img {
+	height: auto;
+    width: 80%;
+}
+.weather_current .time, .weather_widget .forecast_date  {
+    font-size: 1.5em;
+}
+.weather_current .winddir {
+    width: 20px;
+    height: 20px;
+    background-image: url(./img/wind_arrow.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 15px;
+    transform-origin: center;
+}
+.weather_data {
+    padding-left: 10px;
+}
+.search_output_city {
+    margin-top: 2px;
+    border-radius: 10px;
+    transition: 0.5s ease;
+    color: #212121;
+    background-color: #a0d4e2;
+    cursor: pointer;
+    white-space: pre-wrap;
+    padding: 3px 5px;
+}
+.search_output_city:hover {
+    transition: 0.5s ease;
+    background-color: #59788152;
+    color: #f1eeee;
+} 
+.weather_search, .weather_get_forecast {
+    width: 100px;
+    border-radius: 20px;
+    padding: 2px 5px;
+    outline: none;
+    border: none;
+    margin: 10px 0 0 10px;
+    background-color: #65b6cc52;
+    color: #fff;
+    transition: 0.5s ease;
+    font-family: inherit;
+    font-size: 1em;
+}
+.weather_search:hover, .weather_get_forecast:hover {
+    padding: 5px 5px;
+    color: #101d20;
+    background-color: rgba(255, 255, 255, 0.356);
+    transition: 0.5s ease;
+}
+.weather_search::placeholder {
+    color: #fff;
+}
+.weather_search:focus {
+    width: 180px;
+    color: #fff;
+}
+.weather_forecast_day {
+    height: 100%;
+    padding: 35px 10px 20px 30px;
+    width: 0px;
+    display: none;
+    transition: all 1s ease;
+}
+.weather_forecast_day_transition {
+    width: 200px;
+    display: flex;
+}
+.weather_forecast_day .weather_data_row {
+    justify-content: flex-start;
+}
