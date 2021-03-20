@@ -236,7 +236,7 @@ function weatherWidget() {
         request = '',
         search_output = document.querySelector('.weather_search_output'),
         search_input = document.querySelector('.weather_search');
-    let city = getGeolocation();
+    city = getGeolocation();
     /*if (geolocation = 'undefined') {
         city = 'Riga'
     } else {
