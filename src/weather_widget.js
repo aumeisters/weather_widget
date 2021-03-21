@@ -1,13 +1,8 @@
 function weatherWidget() {
     //let's get geolocation
-    fetch(`https://freegeoip.app/json/`)
-    .then(response => {
-        return response.json();
-    })
-    .then(geo => {
+    const success = (pos) => {
+        let city = ( `${pos.coords.latitude},${pos.coords.longitude}`); 
         // we have our coords
-        let city = `${geo.latitude},${geo.longitude}`;
-
         // main function starts to get current weather
         const getWeather = function(city) {
             const output = document.querySelector('.weather_current_output');
@@ -220,16 +215,6 @@ function weatherWidget() {
                 console.error(err);
             });
         }
-        const getGeolocation  = () => {
-            const success = (pos) => {
-                console.log( `${pos.coords.latitude},${pos.coords.longitude}`);
-               
-            }
-            const fail = (err) => {
-                alert (err.message);
-            }
-            navigator.geolocation.getCurrentPosition(success, fail);
-        };
         document.querySelector('.weather_get_forecast').addEventListener('click', () => {
             document.querySelector('.weather_forecast').classList.toggle('weather_forecast_transition');
             let days = document.querySelectorAll('.weather_forecast_day');
@@ -242,10 +227,11 @@ function weatherWidget() {
             search_output = document.querySelector('.weather_search_output'),
             search_input = document.querySelector('.weather_search');
         getWeather(city);
-        autocompleteSearch();  
-    })
-    .catch(err => {
-        console.error(err);
-    });
-}
+        autocompleteSearch();      
+    }
+    const fail = (err) => {
+        alert (err.message);
+    }
+    navigator.geolocation.getCurrentPosition(success, fail);
+} 
 weatherWidget();
